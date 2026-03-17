@@ -1,9 +1,11 @@
 import Navbar from "../../components/NavBar/Navbar";
 import Hero from "./Components/Hero";
 import About from "./Components/About";
-import Service from "./Components/Service"
+
 
 import "../Home/Home.css";
+import Service from "./Components/Service";
+import CallToAction from "./Components/CallToAction";
 const Home = () => {
   return (
     <div>
@@ -11,6 +13,7 @@ const Home = () => {
       <Hero />
       <About />
       <Service/>
+      <CallToAction/>
     </div>
   );
 };
