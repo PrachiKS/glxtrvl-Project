@@ -1,13 +1,18 @@
 import React from "react";
-import { FaArrowUp, FaArrowDown } from 'react-icons/fa'; // From Font Awesome
+import { FaChevronCircleUp, FaChevronCircleDown } from 'react-icons/fa'; // From Font Awesome
 import { useState } from "react";
 
 const Faq = () => {
-const [click, setClick] = useState(false)
+  const [clickedIndex, setClickedIndex] = useState(null);
 
-  const handleClick = () => {
-    setClick(!click)
-  } 
+  const handleClick = (i) => {
+    // 2. If the same index is clicked again, close it (set to null)
+    // Otherwise, set it to the new index
+    if (clickedIndex === i) {
+      return setClickedIndex(null);
+    }
+    setClickedIndex(i);
+  };
 
   const data = [
     {
@@ -41,33 +46,34 @@ const [click, setClick] = useState(false)
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim quis soluta commodi porro, adipisci tempora repellendus blanditiis laudantium minus quibusdam quod labore consequatur. Sequi pariatur et itaque, minus provident minima.",
     }
   ];
+
+
+
   return (
     <>
       <h1 className="Heading">FAQs</h1>
       <section className="faq">
         <div className="item">
           {
-            data.map((item) => {
+            data.map((item, i) => {
               return (
-                <>
-                  <div className="question" key={item.question}>
+                <div className="wrapper" key={i}>
+                  <div className="question" onClick={() => handleClick(i)}>
                     <h3>{item.question}</h3>
-                    <div className="hamburger" onClick={handleClick}>
-                            {
-                            
-                            click ? (
-                              <FaArrowUp style={{color : "white"}} size={25}/>
-                            ):(
-                              <FaArrowDown style={{color : "white"}} size={25}/>
-                            )
-                            }
+                    <div className="Arrow">
+                      {clickedIndex === i ? (
+                        <FaChevronCircleUp style={{ color: "white" }} size={25} />
+                      ) : (
+                        <FaChevronCircleDown style={{ color: "white" }} size={25} />
+                      )}
+                    </div>
                   </div>
+                  <div className={`answers ${clickedIndex === i ? 'show' : ''}`}>
+                    <div className="content-inner">
+                      <p>{item.answers}</p>
+                    </div>
                   </div>
-
-                  <div className="answers" key={item.answers}>
-                    <p>{item.answers}</p>
-                  </div>
-                </>
+                </div>
               )
             })
           }
