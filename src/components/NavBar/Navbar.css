@@ -8,7 +8,9 @@ nav {
   z-index: 999999999;
   width: 100%;
 }
-
+.color{
+  background-color: #080808;
+}
 nav .hamburger {
   display: none;
 }
