@@ -7,7 +7,7 @@ const Contact = () => {
     return(
       <>
         <Navbar/>
-        <Header/>
+        <Header heading="Contact Page"/>
         <Footer/>
       </>
     )

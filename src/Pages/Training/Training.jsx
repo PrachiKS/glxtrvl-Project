@@ -7,7 +7,7 @@ const Training = () => {
     return(
       <>
         <Navbar/>
-        <Header/>
+        <Header heading="Training Page"/>
         <Footer/>
       </>
     )
