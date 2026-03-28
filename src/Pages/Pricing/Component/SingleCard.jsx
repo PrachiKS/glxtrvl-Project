@@ -1,14 +1,14 @@
 import React from 'react'
 
-const SingleCard = () => {
+const SingleCard = ({heading, Line1, Line2, Line3}) => {
   return (
     <div className='card'>
-        <h2>Basic</h2>
+        <h2>{heading}</h2>
 
         <div className="content">
-            <p>5 Lakhs</p>
-            <p>No Unlimited</p>
-            <p>No Food</p>
+            <p>{Line1}</p>
+            <p>{Line2}</p>
+            <p>{Line3}</p>
         </div>
     </div>
   );

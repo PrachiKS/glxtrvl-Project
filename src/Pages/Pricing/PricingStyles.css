@@ -16,7 +16,26 @@
     gap: 30px;
     text-align: center;
     border: 1px solid white;
-    border-radius: 15px;
+    border-radius: 10px;
     width: 300px;
     height: 300px;
+    transition: 0.5s all;
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.card h2{
+    font-size: 40px;
+}
+
+.card .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
 }
