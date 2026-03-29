@@ -14,7 +14,7 @@ const Home = () => {
     <div>
       <Navbar />
       <Hero />
-      <About />
+      <About heading="About Us"/>
       <Service/>
       <CallToAction/>
       <Faq/>

@@ -1,9 +1,9 @@
 import React from "react";
 import glxImage from "../../../assets/glx.jpg";
-const About = () => {
+const About = ({ heading }) => {
   return (
     <>
-    <h1 className="Heading">About us</h1>
+    <h1 className="Heading">{heading}</h1>
     <section className="about">
       <img src={glxImage} alt="Description of glx image" />
       <div className='content'>
