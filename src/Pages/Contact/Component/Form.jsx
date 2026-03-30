@@ -4,7 +4,7 @@ const Form = () => {
     return (
         <>
             <h1 className='Heading'>Contact Us</h1>
-           <section>
+           <section className='container'>
              <form>
                 <div className='field'>
                     <p>Name</p>
@@ -18,11 +18,11 @@ const Form = () => {
                     <p>Phone Number</p>
                     <input type="tel" placeholder='Enter your phone number' required />
                 </div>
-                <div className='field'>
-                    <p>Message</p>
-                    <textarea placeholder='Enter your message' required></textarea>
+
+                <div className="form-button">
+                    <button type='submit'>Submit</button>
                 </div>
-                <button type='submit'>Submit</button>
+                
             </form>
            </section>
         </>
